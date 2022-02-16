@@ -1,3 +1,33 @@
-h1{
-    color: purple;
+*,
+*::before, 
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    background-color: aquamarine;
+    /*box-shadow*/
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 20rem;
+    height: 100vh;
+    border: 1px solid red;
+    padding-top: 1rem;
+    overflow-x: hidden;
+}
+
+.sidebar-middle{
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
 }

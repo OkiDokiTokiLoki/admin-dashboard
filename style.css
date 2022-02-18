@@ -1,17 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+
 *,
 *::before, 
 *::after{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --sidebar-width: 20rem;
 }
 
 body{
-    margin: 0;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul{
+    list-style: none;
 }
 
 header{
     position: sticky;
     top: 0;
     background-color: aquamarine;
+    margin-left: var(--sidebar-width);
+    height: 80px;
+    padding: 1rem;
     /*box-shadow*/
 }
 
@@ -19,15 +35,35 @@ header{
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    width: 20rem;
+    align-items: flex-start;
+    width: var(--sidebar-width);
     height: 100vh;
     border: 1px solid red;
-    padding-top: 1rem;
+    padding: 1em;
     overflow-x: hidden;
+}
+
+.sidebar-top{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 80px;
+    /*padding: 1em;*/
+}
+
+.nav-link{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .sidebar-middle{
     flex-grow: 1;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.middle-nav-item,
+.bottom-nav-item{
+    width: 90%;
 }

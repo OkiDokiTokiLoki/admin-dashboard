@@ -10,6 +10,8 @@
 
 :root{
     --sidebar-width: 20rem;
+    --dashboard: hsl(252, 37%, 11%);
+    --background-grey: hsl(252, 37%, 95%);
 }
 
 body{
@@ -32,11 +34,10 @@ a{
 header{
     position: sticky;
     top: 0;
-    background-color: rgb(178, 247, 224);
     margin-left: var(--sidebar-width);
-    height: 250px;
+    height: 200px;
     padding: 2em 3em 1em 3em;
-    /* box-shadow*/
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, .4);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -46,7 +47,7 @@ header{
 .header-bottom{
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
 }
 
 .search-container{
@@ -62,7 +63,7 @@ header{
     border-radius: 20px;
     outline: none;
     border: 1px solid transparent;
-    background-color: aliceblue;
+    background-color: var(--background-grey);
 }
 
 .notification-container{
@@ -74,21 +75,17 @@ header{
 
 .bell-link{
     border-radius: 50px;
-    padding: 5px;
-    transition: 300ms ease;
+    /* padding: 5px; */
+    transition: 200ms ease;
 }
 
 .bell-link:hover{
-    background-color: rgb(207, 207, 207);
-    filter: invert(1);
+    /* background-color: rgb(207, 207, 207); */
+    filter: invert(0.5);
 }
 
 .notification-container h3{
     color: #000;
-}
-
-.header-bottom{
-    background-color: lightcoral;
 }
 
 .name-container{
@@ -101,6 +98,26 @@ header{
     width: 65px;
 }
 
+.action-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-link{
+    background-color: var(--dashboard);
+    margin: 0 10px;
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    transition: all 200ms ease;
+}
+
+.action-link:hover{
+    background-color: goldenrod;
+    color: #000;
+}
+
 .sidebar{
     display: flex;
     flex-direction: column;
@@ -108,16 +125,17 @@ header{
     align-items: flex-start;
     width: var(--sidebar-width);
     height: 100vh;
-    border: 1px solid rgb(21, 17, 37);;
-    margin-top: -250px;
+    border: 1px solid var(--dashboard);
+    margin-top: -200px;
     padding: 2em 3em;
     overflow-x: hidden;
-    background-color: rgb(21, 17, 37);
+    background-color: var(--dashboard);
 }
 
 h1,
 .sidebar a{
     color: white;
+    transition: all 200ms ease;
 }
 
 .sidebar a:hover{
@@ -153,4 +171,43 @@ h1,
 .sidebar-top > img, 
 .sidebar .nav-link > img{
     margin-right: 20px;
+}
+
+main{
+    margin-top: -687px;
+    margin-left: var(--sidebar-width);
+    background-color: var(--background-grey);
+    padding: 1.5em 2em;
+}
+
+.primary-section > h3{
+    margin-bottom: 20px;
+}
+
+.projects-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-item{
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px 40px;
+    border-left: 8px solid var(--dashboard);
+}
+
+.grid-icons{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.grid-icon{
+    margin: 0 5px;
+    transition: all 200ms ease;
+}
+
+.grid-icon:hover{
+    filter: invert(0.5);
 }

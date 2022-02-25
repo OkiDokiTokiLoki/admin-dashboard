@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
-
+/*#region Reset*/
 *,
 *::before, 
 *::after{
@@ -10,13 +10,15 @@
 
 :root{
     --sidebar-width: 20rem;
-    --dashboard: hsl(252, 37%, 11%);
-    --background-grey: hsl(252, 37%, 95%);
+    --primary-col: hsl(252, 37%, 11%);
+    --background-grey: hsl(252, 37%, 93%);
+    --secondary-col: hsl(43, 74%, 49%);
 }
 
 body{
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
+    overflow-y: hidden;
 }
 
 ul{
@@ -26,7 +28,9 @@ ul{
 a{
     text-decoration: none;
 }
+/*#endregion Reset*/
 
+/*#region Header*/
 .avatar{
     width: 50px;
 }
@@ -81,11 +85,15 @@ header{
 
 .bell-link:hover{
     /* background-color: rgb(207, 207, 207); */
-    filter: invert(0.5);
+    filter: invert(62%) sepia(94%) saturate(405%) hue-rotate(2deg) brightness(93%) contrast(87%);
 }
 
 .notification-container h3{
     color: #000;
+}
+
+.notification-container h3:hover{
+    color: var(--secondary-col);
 }
 
 .name-container{
@@ -104,7 +112,7 @@ header{
 }
 
 .action-link{
-    background-color: var(--dashboard);
+    background-color: var(--primary-col);
     margin: 0 10px;
     padding: 10px 30px;
     border-radius: 50px;
@@ -114,10 +122,12 @@ header{
 }
 
 .action-link:hover{
-    background-color: goldenrod;
+    background-color: var(--secondary-col);
     color: #000;
 }
+/*#endregion Header*/
 
+/*#region Sidebar*/
 .sidebar{
     display: flex;
     flex-direction: column;
@@ -125,11 +135,11 @@ header{
     align-items: flex-start;
     width: var(--sidebar-width);
     height: 100vh;
-    border: 1px solid var(--dashboard);
+    border: 1px solid var(--primary-col);
     margin-top: -200px;
     padding: 2em 3em;
     overflow-x: hidden;
-    background-color: var(--dashboard);
+    background-color: var(--primary-col);
 }
 
 h1,
@@ -140,12 +150,12 @@ h1,
 
 .sidebar a:hover{
     text-decoration: underline;
-    color: goldenrod;
+    color: var(--secondary-col);
 }
 
 .sidebar img{
-    filter: invert(100%);
-   -webkit-filter: invert(100%);
+    filter: invert(1);
+   -webkit-filter: invert(1);
 }
 
 .sidebar-top{
@@ -172,12 +182,15 @@ h1,
 .sidebar .nav-link > img{
     margin-right: 20px;
 }
+/*#endregion Sidebar*/
 
+/*#region Main*/
 main{
     margin-top: -687px;
     margin-left: var(--sidebar-width);
     background-color: var(--background-grey);
     padding: 1.5em 2em;
+    height: 100vh;
 }
 
 .primary-section > h3{
@@ -186,8 +199,8 @@ main{
 
 .projects-grid{
     display: grid;
-    grid-template-columns: repeat(2, 400px);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 500px);
+    grid-template-rows: repeat(3, 180px);
     gap: 20px;
 }
 
@@ -195,12 +208,13 @@ main{
     background-color: #fff;
     border-radius: 8px;
     padding: 20px 40px;
-    border-left: 8px solid var(--dashboard);
+    border-left: 8px solid var(--secondary-col);
 }
 
 .grid-icons{
     display: flex;
     justify-content: flex-end;
+    margin-top: 10px;
 }
 
 .grid-icon{
@@ -209,5 +223,30 @@ main{
 }
 
 .grid-icon:hover{
-    filter: invert(0.5);
+    filter: invert(62%) sepia(94%) saturate(405%) hue-rotate(2deg) brightness(93%) contrast(87%);
 }
+
+.secondary-section{
+    width: 450px;
+    margin-top: -645px;
+    margin-left: 1023px;
+    padding: 1.5em 20px;
+}
+
+.announcements-container{
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 17px;
+    padding: 1.5em 2em;
+}
+
+.announcement-item > h4{
+    margin-bottom: 5px;
+}
+
+.announcement-item p{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--background-grey);
+}
+/*#endregion Main*/

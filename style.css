@@ -10,7 +10,7 @@
 
 :root{
     --sidebar-width: 20rem;
-    --primary-col: hsl(252, 37%, 11%);
+    --primary-col: hsl(252, 40%, 15%);
     --background-grey: hsl(252, 37%, 93%);
     --secondary-col: hsl(43, 74%, 49%);
 }
@@ -78,22 +78,54 @@ header{
 
 .bell-link{
     border-radius: 50px;
-    /* padding: 5px; */
     transition: 200ms ease;
 }
 
 .bell-link:hover{
-    /* background-color: rgb(207, 207, 207); */
     filter: invert(62%) sepia(94%) saturate(405%) hue-rotate(2deg) brightness(93%) contrast(87%);
 }
 
 .notification-container h3{
+    position: relative;
+    isolation: isolate;
+    background: 0;
+
+    width: 100%;
     color: #000;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 200ms ease;
 }
 
-.notification-container h3:hover{
-    color: var(--secondary-col);
+.notification-container h3:hover,
+.notification-container h3:focus{
+    color: #fff;
+    background-color: var(--primary-col);
 }
+
+.notification-container h3::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--primary-col);
+    border-radius: 8px;
+    transform: scale(1, 0);
+    transform-origin: center;
+    transition: transform 200ms ease;
+}
+
+.notification-container h3:hover::after{
+    transform: scale(1, 1);
+}
+
+
+
+
+
+
+
+
 
 .name-container{
     display: flex;
@@ -117,12 +149,13 @@ header{
     border-radius: 50px;
     color: #fff;
     font-size: 14px;
+    font-weight: bold;
     transition: all 200ms ease;
 }
 
 .action-link:hover{
     background-color: var(--secondary-col);
-    color: #000;
+    /* color: #000; */
 }
 /*#endregion Header*/
 
@@ -264,46 +297,26 @@ main{
 }
 
 .trending-link{
-    margin-right: 15px;
+    margin-right: 10px;
     transition: all 200ms ease;
 }
-
-.trending-handle{
-    font-weight: bold;
-    color: #000;
-    transition: all 200ms ease;
-    padding-left: 10px;
-    padding-top: 8px;
-    /* border-left: 4px solid transparent; */
-}
-
-.trending-link:hover + .trending-handle,
-.trending-handle:hover{
-    color: #fff;
-    /* border-left: 4px solid var(--secondary-col); */
-    background-color: var(--secondary-col);
-}
-
-.trending-handle span{
-    font-weight: normal;
-}
-
-
-
 
 .trending-handle{
     position: relative;
     isolation: isolate;
     background: 0;
-    text-decoration: none;
     width: 100%;
+    padding-left: 10px;
+    padding-top: 8px;
+    text-decoration: none; 
+    font-weight: bold;
+    color: #000;
     transition: all 200ms linear;
-    border-radius: 8px;
 }
 
 .trending-handle:hover,
 .trending-handle:focus{
-    color: hsl(0, 0%, 100%);
+    color: #fff;
 }
 
 .trending-handle::after{
@@ -311,14 +324,18 @@ main{
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: var(--secondary-col);
+    background: var(--primary-col);
     border-radius: 8px;
     transform: scale(1, 0);
     transform-origin: center;
-    transition: transform 250ms ease;
+    transition: transform 200ms ease;
 }
 
 .trending-handle:hover::after{
     transform: scale(1, 1);
+}
+
+.trending-handle span{
+    font-weight: normal;
 }
 /*#endregion Main*/

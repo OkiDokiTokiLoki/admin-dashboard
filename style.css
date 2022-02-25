@@ -264,6 +264,61 @@ main{
 }
 
 .trending-link{
-    margin-right: 20px;
+    margin-right: 15px;
+    transition: all 200ms ease;
+}
+
+.trending-handle{
+    font-weight: bold;
+    color: #000;
+    transition: all 200ms ease;
+    padding-left: 10px;
+    padding-top: 8px;
+    /* border-left: 4px solid transparent; */
+}
+
+.trending-link:hover + .trending-handle,
+.trending-handle:hover{
+    color: #fff;
+    /* border-left: 4px solid var(--secondary-col); */
+    background-color: var(--secondary-col);
+}
+
+.trending-handle span{
+    font-weight: normal;
+}
+
+
+
+
+.trending-handle{
+    position: relative;
+    isolation: isolate;
+    background: 0;
+    text-decoration: none;
+    width: 100%;
+    transition: all 200ms linear;
+    border-radius: 8px;
+}
+
+.trending-handle:hover,
+.trending-handle:focus{
+    color: hsl(0, 0%, 100%);
+}
+
+.trending-handle::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--secondary-col);
+    border-radius: 8px;
+    transform: scale(1, 0);
+    transform-origin: center;
+    transition: transform 250ms ease;
+}
+
+.trending-handle:hover::after{
+    transform: scale(1, 1);
 }
 /*#endregion Main*/

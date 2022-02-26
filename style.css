@@ -28,6 +28,10 @@ ul{
 a{
     text-decoration: none;
 }
+
+.transition{
+    transition: 200ms ease;
+}
 /*#endregion Reset*/
 
 /*#region Header*/
@@ -78,7 +82,6 @@ header{
 
 .bell-link{
     border-radius: 50px;
-    transition: 200ms ease;
 }
 
 .bell-link:hover{
@@ -150,7 +153,6 @@ header{
     color: #fff;
     font-size: 14px;
     font-weight: bold;
-    transition: all 200ms ease;
 }
 
 .action-link:hover{
@@ -175,12 +177,11 @@ header{
 }
 
 h1,
-.sidebar a{
-    color: white;
-    transition: all 200ms ease;
+.nav-link{
+    color: #fff;
 }
 
-.sidebar a:hover{
+.nav-link:hover{
     text-decoration: underline;
     color: var(--secondary-col);
 }
@@ -258,7 +259,6 @@ main{
 
 .grid-icon{
     margin: 0 5px;
-    transition: all 200ms ease;
 }
 
 .grid-icon:hover{
@@ -305,7 +305,6 @@ main{
 
 .trending-link{
     margin-right: 10px;
-    transition: all 200ms ease;
 }
 
 .trending-handle{
@@ -318,7 +317,6 @@ main{
     text-decoration: none; 
     font-weight: bold;
     color: #000;
-    transition: all 200ms linear;
 }
 
 .trending-handle:hover,

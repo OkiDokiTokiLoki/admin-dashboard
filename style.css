@@ -241,6 +241,13 @@ main{
     border-radius: 8px;
     padding: 20px 40px;
     border-left: 8px solid var(--secondary-col);
+
+}
+
+.grid-item > h3:hover{
+    transition: color 200ms ease;
+    color: var(--secondary-col);
+    cursor: pointer;
 }
 
 .grid-icons{

@@ -96,7 +96,7 @@ header{
     color: #000;
     padding: 10px;
     border-radius: 8px;
-    transition: 200ms ease;
+    transition: 300ms ease;
 }
 
 .notification-container h3:hover,
@@ -114,7 +114,7 @@ header{
     border-radius: 8px;
     transform: scale(1, 0);
     transform-origin: center;
-    transition: transform 200ms ease;
+    transition: 300ms ease;
 }
 
 .notification-container h3:hover::after{
@@ -162,7 +162,7 @@ header{
     height: 100vh;
     border: 1px solid var(--primary-col);
     margin-top: -200px;
-    padding: 2em 3em;
+    padding: 2em 2em;
     overflow-x: hidden;
     background-color: var(--primary-col);
 }
@@ -170,11 +170,15 @@ header{
 h1,
 .nav-link{
     color: #fff;
+    width: var(--sidebar-width);
+    transition: background-color 500ms ease;
+    padding: 0.75em;
 }
 
 .nav-link:hover{
-    text-decoration: underline;
-    color: var(--secondary-col);
+    color: var(--primary-col);
+    background-color: var(--secondary-col);
+    font-weight: 600;
 }
 
 .sidebar img{
@@ -199,13 +203,14 @@ h1,
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin: 1em 0;
+    margin: 0.5em 0;
 }
 
 .sidebar-top > img, 
 .sidebar .nav-link > img{
     margin-right: 20px;
 }
+
 /*#endregion Sidebar*/
 
 /*#region Main*/

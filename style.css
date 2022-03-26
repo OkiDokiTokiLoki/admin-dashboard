@@ -19,6 +19,7 @@ body{
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
     overflow-y: hidden;
+    color: #000;
 }
 
 ul{
@@ -41,13 +42,13 @@ a{
 
 header{
     margin-left: var(--sidebar-width);
-    height: 200px;
+    height: 250px;
     padding: 2em 3em 1em 3em;
     background-color: #fff;
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, .4);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .header-top,
@@ -148,7 +149,7 @@ header{
 
 .action-link:hover{
     background-color: var(--secondary-col);
-    /* color: #000; */
+    color: #000;
 }
 /*#endregion Header*/
 
